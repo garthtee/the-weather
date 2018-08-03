@@ -1,0 +1,20 @@
+{
+  "name": "the-weather",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/garthtee/the-weather",
+  "keywords": [
+    "the weather",
+    "weather",
+    "desktop"
+  ],
+  "author": "Garth Toland",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0"
+  }
+}
