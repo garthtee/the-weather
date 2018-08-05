@@ -1,16 +1,37 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <button @click="getLocation($event)">Location</button>
+    <h4>Position: {{ lat }} {{ long }}</h4>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  data () {
+  data: function () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'The Weather',
+      lat: 0,
+      long: 0
+    }
+  },
+  methods: {
+    getLocation: function (event) {
+      var self = this
+
+      navigator.permissions.query({ name: 'geolocation' }).then(function (result) {
+        console.log(result.state)
+      })
+
+      navigator.geolocation.getCurrentPosition(function (position) {
+        self.lat = position.coords.latitude
+        self.long = position.coords.longitude
+        console.log(self.lat)
+        console.log(self.long)
+      }, function (error) {
+        console.error(error)
+      })
     }
   }
 }

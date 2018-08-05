@@ -2,6 +2,8 @@ const {app, BrowserWindow} = require('electron');
 
 let win = null;
 
+process.env.GOOGLE_API_KEY = 'AIzaSyCgT0X9tyBw3yLC9lxD_0Igy2EOdT4E5g4';
+
 app.on('ready', function () {
 
   // Initialize the window to our specified dimensions
@@ -18,7 +20,7 @@ app.on('ready', function () {
 });
 
 // Create the application window if the window variable is null
-app.on('activate', () => {
+app.on('activate', function () {
   if (win === null) {
     createWindow();
   }
