@@ -1,13 +1,13 @@
-const {app, BrowserWindow} = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 let win = null;
-
-process.env.GOOGLE_API_KEY = 'AIzaSyCgT0X9tyBw3yLC9lxD_0Igy2EOdT4E5g4';
 
 app.on('ready', function () {
 
   // Initialize the window to our specified dimensions
-  win = new BrowserWindow({width: 1000, height: 600});
+  win = new BrowserWindow();
+
+  win.maximize();
 
   // Specify entry point to default entry point of vue.js
   win.loadURL('http://localhost:8080');
